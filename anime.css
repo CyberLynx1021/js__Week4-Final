@@ -180,16 +180,17 @@ Landing PAGE
 }
 
 .input--wrapper {
-    width: 100%;
+    width: 100vw;
     position: relative; 
      display: flex;
     justify-content: center;
     /* align-items: center; */
     width:730px;
-    
+    position: absolute; 
 }
 
 .input {
+  max-width:556px;
   align-items: center;
   background-color: #fff;
   border-radius: 20px;
@@ -200,8 +201,7 @@ Landing PAGE
   line-height: 40px;
   outline: none;
   padding: 0 15px;
-  width: 60%;
-  /* width:556px; */
+  width: 100%;
   font-size: 24px;
   margin-left: 200px;
   place-content: center;
@@ -209,6 +209,7 @@ Landing PAGE
 }
 
 .not__loading {
+  width:100%;
   border: 1px solid #6030b1;
     background-color: #6030b1;
     box-shadow: 7px 7px 14px rgb(134 93 204 / 30%);
@@ -219,7 +220,7 @@ Landing PAGE
 
 button {
     width:100%;
-    /* width: 80px; */
+    max-width: 80px;
     position: relative;
     margin-left: 20px;
     font-size: 58px;
@@ -227,6 +228,7 @@ button {
     border-radius: 20px;
     transition: all .25s ease;
     position: relative;
+    left: 540px;
 }
 
 svg {
