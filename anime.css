@@ -72,6 +72,10 @@ NAV
     text-decoration: none;
 }
 
+.phone__nav {
+  position: relative;
+  display: block;
+}
 .bento-menu {
   width: 27px;
     height: 27px;
@@ -82,7 +86,7 @@ NAV
     padding: 5px;
     cursor: pointer;
 }
-.data-v-48b363cf{
+data-v-48b363cf{
   width: 7px;
   height: 7px;
   border-radius: 50%;
