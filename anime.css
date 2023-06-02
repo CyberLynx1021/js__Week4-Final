@@ -21,6 +21,8 @@ NAV
     font-size: 18px;
     font-weight: 600;
 }
+
+
 .nav__content--wrapper{
   align-items: center!important;
   justify-content: space-between!important;
@@ -29,7 +31,10 @@ NAV
   max-width: 1200px;
   display: flex;
   flex-wrap: wrap;
-}
+} 
+
+
+
 
 .blinker__logo{
   height: 90px;
@@ -112,7 +117,7 @@ a.link[data-v-48b363cf] {
   background-color: transparent;
   z-index: 2000;
   cursor: pointer;
-}
+} 
 
 .show__menu [data-v-48b363cf] {
   transform: translateX(100%);
@@ -128,7 +133,7 @@ a.link[data-v-48b363cf] {
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
+} 
 
 /*
 
