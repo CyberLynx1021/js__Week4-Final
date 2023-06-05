@@ -99,6 +99,7 @@ a.link[data-v-48b363cf] {
     box-sizing: content-box;
     padding: 5px;
     cursor: pointer;
+    padding-top:2rem
 }
 .bento-menu>div[data-v-48b363cf]{
   width: 7px;
@@ -135,13 +136,16 @@ a.link[data-v-48b363cf] {
     justify-content: center;
 }  */
 
-.menu--open  .menu__backdrop{
+.menu--open  .menu__backdrop {
 background-color: white;
 opacity: 1;
 visibility: visible;
-animation: slideInToShow 500ms ease-out
+animation: slideInToShow 500ms ease-out;
+display:block;
+margin-bottom: -5rem;
 }
  .menu__backdrop{
+  margin-bottom:-5.1rem;
   background-color: black;
   top: 0;
   right:0;
@@ -153,14 +157,13 @@ animation: slideInToShow 500ms ease-out
   display: flex;
   align-items: center;
   justify-content: center;
+  display:none;
  }
 .menu--open {
   max-height:100vh;
   overflow-y: hidden;
 }
-.menu__link{
 
-}
 /*
 
 Landing PAGE
@@ -197,9 +200,9 @@ Landing PAGE
 .header__one {
   text-align: center;
   font-size: 40px;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
   width: 100%;
-  margin: 0 0 30px;
+  /* margin: 0 0 30px; */
   font-weight: 700;
   place-content: center;
 
