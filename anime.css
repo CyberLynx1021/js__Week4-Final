@@ -13,6 +13,11 @@ NAV
 
 */
 
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
 .nav__bar{
     height: 165px;
     display: flex;
@@ -30,7 +35,6 @@ NAV
   width: 100%;
   max-width: 1200px;
   display: flex;
-  flex-wrap: wrap;
 } 
 
 
@@ -93,13 +97,14 @@ a.link[data-v-48b363cf] {
 .bento-menu {
   width: 27px;
     height: 27px;
-    display: flex;
+    display:none;
+    /* display: flex; */
     flex-wrap: wrap;
     justify-content: space-between;
     box-sizing: content-box;
     padding: 5px;
     cursor: pointer;
-    padding-top:2rem
+    padding-top:2rem;
 }
 .bento-menu>div[data-v-48b363cf]{
   width: 7px;
@@ -145,19 +150,21 @@ display:block;
 margin-bottom: -5rem;
 }
  .menu__backdrop{
-  margin-bottom:-5.1rem;
-  background-color: black;
+  background-color: black !important;
+  position: absolute;
   top: 0;
   right:0;
   left:0;
   bottom: 0;
   opacity:0;
   visibility: hidden;
-  transform: all 750ms smooth;
+  transform: all 750ms smooth ;
   display: flex;
   align-items: center;
   justify-content: center;
   display:none;
+  width:100vw;
+  height:100vh;
  }
 .menu--open {
   max-height:100vh;
