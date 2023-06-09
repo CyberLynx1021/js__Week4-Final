@@ -1,99 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>API Response Example</title>
     <link rel="stylesheet" href="./anime.css">
-    <script src="anime.js"></script>
+    <script src="anime.js" defer></script>
 
 </head>
 <body>
-    <div class="full__page">
-        <header class="nav__bar">
-                <div class="nav__content--wrapper">
-                    <div class="logo">
-                        <img class="blinker__logo"src="./assets/animego-1 (1).jpg">
-                    </div>
-                    <div class="links__ac"> 
-                        <a class= "home__link"href="">HOME</a>
-                        <a class= "find__link" href="">Find your Anime</a>
-                        <a class= "contact__btn" href="">Contact</a>
+    <div id="api-response"></div>
 
-                </div>
-                    <div class="phone__nav">
-                    <div data-v-48b363cf="" class="bento-menu" onclick="openMenu() ">
-                    <div data-v-48b363cf=""></div>
-                    <div data-v-48b363cf=""></div>
-                    <div data-v-48b363cf=""></div>
-                    <div data-v-48b363cf=""></div>
-                    <div data-v-48b363cf=""></div>
-                    <div data-v-48b363cf=""></div>
-                    <div data-v-48b363cf=""></div>
-                    <div data-v-48b363cf=""></div>
-                    <div data-v-48b363cf=""></div>
-                </div>
-                <section>
-                    <button class="btn-menu" onclick="openMenu()">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                    <div class="menu__backdrop">
-                        <button class="btn__menu btn__menu--close"
-                        onclick="closeMenu()"
-                        >
-                        <i class="fas fa-times"></i>                        
-                    </button>
-                    <ul class="menu__links">
-                        <li class="menu__list">
-                            <a class="menu__link " onclick="closeMenu()" href="#"
-                            >Shop</a
-                                >
-                        </li>
-                        <li class="menu__list">
-                            <a class="menu__link" onclick="closeMenu()" href="#"
-                            >Journal</a
-                                >
-                            </li>
-                                <li class="menu__list">
-                                    <a class="menu__link" onclick="closeMenu()" href="#"
-                                        >Contact</a
-                                        >
-                                    </li>  
-                    </ul>
-                    </div>
-                </section>
-                <div class="close__btn"></div>
-                <!-- <div data-v-48b363cf class="show__menu" onclick="openMenu()">
-                        <a class= "home__link" href="">HOME</a>
-                        <a class= "find__link" href="">Find your Anime</a>
-                        <a class= "contact__btn" href="">Contact</a>
-                </div> -->
-                </div>
-            </div>
-        </div>
-        </header>
-        <section class ="Landing__page">
-            <div class="content__wrapper">
-                <div class="header__section">
-                    <h1 class="header__one"><span class="Orange">Voted Best application to find your favorite anime.</span></h1>
-                </div>
-            </div><div class="p">
-            <p class="sub__header"> Find anime that you've never seen before<span class="Orange">ages ago.</span>
-            </p>
-        </div>
-        <div class="input__wrapper">
-            <div class="input">
-                <button class="not__loading">
-                    <svg data-v-2a11e7ca="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-                     class="svg-inline--fa fa-search fa-w-16"><path data-v-2a11e7ca="" fill="currentColor" d="M505 442.7L405.3 343c
-                     -4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 
-                     92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208
-                      336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" class=""></path></svg>
-                </button>
-            </div>
-        </div>
-        </section>
-    </div>
+    <script>
+        async function main() {
+    const url = 'https://anime-db.p.rapidapi.com/anime?page=1&size=10&search=Fullmetal&genres=Fantasy%2CDrama&sortBy=ranking&sortOrder=asc';
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '50ea460c65msh9b251d8a5747921p1204a7jsn2eb5e50e7816',
+            'X-RapidAPI-Host': 'anime-db.p.rapidapi.com'
+        }
+    };
+
+    try {
+        const response = await fetch(url, options);
+        const data = await response.json();
+
+        // Assuming the image URL is in the 'imageUrl' property of the first anime object in the data response
+        const imageUrl = data.anime[0].imageUrl;
+
+        // Create an <img> element and set its 'src' attribute to the image URL
+        const imgElement = document.createElement('img');
+        imgElement.src = imageUrl;
+
+        // Append the image element to the body of the HTML document
+        document.body.appendChild(imgElement);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+main();
+
+    </script>
 </body>
 </html>

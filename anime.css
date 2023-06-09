@@ -93,12 +93,12 @@ a.link[data-v-48b363cf] {
   position: relative;
   display: block;
 }
-/* .bento-menu>[data-v-48b363cf] */
+
 .bento-menu {
   width: 27px;
     height: 27px;
     display:none;
-    /* display: flex; */
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     box-sizing: content-box;
@@ -125,32 +125,27 @@ a.link[data-v-48b363cf] {
   cursor: pointer;
 } 
 
-/* .show__menu [data-v-48b363cf] {
-  transform: translateX(100%);
-    opacity: 0;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    z-index: 1005;
-    background-color: hsla(0,0%,100%,.95);
-    transition: all .4s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}  */
 
 .menu--open  .menu__backdrop {
 background-color: white;
-opacity: 1;
+opacity: 0.83;
 visibility: visible;
 animation: slideInToShow 500ms ease-out;
 display:block;
-margin-bottom: -5rem;
 }
+.backdrop__container{
+width:100%;
+height:100%;
+position:relative;
+display: flex;
+flex-direction: column;
+justify-content: center;
+animation: slideInLeft 700ms linear;
+background-color:black;
+}
+
  .menu__backdrop{
-  background-color: black !important;
+  background-color: transparent;
   position: absolute;
   top: 0;
   right:0;
@@ -162,13 +157,79 @@ margin-bottom: -5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   display:none;
   width:100vw;
   height:100vh;
+  z-index: 99999;
  }
+ @keyframes slideInLeft{
+  0%{
+  transform:translate(100%,0)
+  }
+  100%{
+    transform:translate(0%,0)
+  }
+ }
+ @keyframes slideInRight{
+  
+    0%{
+    transform:translate(0%,0)
+    }
+    100%{
+      transform:translate(100%,0)
+    }
+ }
+
 .menu--open {
   max-height:100vh;
   overflow-y: hidden;
+}
+.x__button{
+font-size: 40px;
+width:37px;
+height:37px;
+position:absolute;
+cursor:pointer;
+top:40px;
+right:40px;
+color:#ffa500;
+animation: xspin  3s ease;
+}
+.x__button:hover{
+  animation: xspin  3s ease infinite;
+  }
+
+@keyframes xspin{
+  
+  0%{
+  transform:rotate(0deg)
+  }
+  50%{
+    transform: rotate(360deg)
+  }
+  100%{
+    transform:rotate(0deg)
+  }
+}
+.menu__links{
+  width:100%;
+  height:100%;
+  /* max-width:700px; */
+  /* max-height:700px; */
+  font-size:30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu__list{
+  margin:35px;
+}
+
+.menu__link{
+  color:#ffa500;
 }
 
 /*
@@ -182,45 +243,49 @@ Landing PAGE
     flex-direction: column;
 }
 .Landing__page{
-  max-width: 100vw;
-  /* display: flex; */
-    flex: 1;
+  width:100%;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .content__wrapper{
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
-  margin: 0 auto;
   width: 100%;
   max-width: 1200px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .header__section{
-  align-items: center;
-  flex-direction: column;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .header__one {
   text-align: center;
   font-size: 40px;
-  margin-bottom: 50px;
+  margin: 40px 0; 
   width: 100%;
-  /* margin: 0 0 30px; */
   font-weight: 700;
-  place-content: center;
-
 }
 
 .Orange {
   color:orange;
+  padding-top:14px;
 }
 
 .sub__header {
   width: 100%;
+  height:100%;
   margin-bottom: 40px;
   font-size: 30px;
     font-weight: 700;
@@ -228,98 +293,66 @@ Landing PAGE
     color: #0a1f44;
     text-transform: uppercase;
     text-align: center;
-    display:grid;
-  place-content: center;
-  
+ 
 }
 
+.search__station{
+  width:100%;
+  max-width:700px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .input--wrapper {
-    width: 100vw;
-    position: relative; 
-     display: flex;
+    width: 100% !important;
+    display: flex;
     justify-content: center;
-    /* align-items: center; */
-    width:730px;
-    position: absolute; 
+    align-items: center;
 }
 
 .input {
-  max-width:556px;
-  align-items: center;
-  background-color: #fff;
+  width: 500px;
+  height: 100%;
+  text-align: center;
+  background-color:#f0cf92;
   border-radius: 20px;
   border: 1px solid #0a1f44;
   color: #0a1f44;
-  display: inline-block;
-  height: 70px;
+  font-size:22px;
+  height:70px;
   line-height: 40px;
-  outline: none;
-  padding: 0 15px;
-  width: 60%;
-  font-size: 24px;
-  margin-left: 200px;
-  place-content: center;
-  
+  outline:none;
 }
-
 .not__loading {
-  width:100%;
-  border: 1px solid #6030b1;
-    background-color: #6030b1;
-    box-shadow: 7px 7px 14px rgb(134 93 204 / 30%);
-    cursor: pointer;
-  text-align: center;
-  
-}
-
-button {
     width:100%;
     max-width: 80px;
-    position: relative;
-    margin-left: 20px;
+    height:100%;
+    max-height:80px;
     font-size: 58px;
-    color: #fff;
+    border: 1px solid  #ffa500;
+    background-color: #ffa500;
     border-radius: 20px;
+    box-shadow: 7px 7px 14px rgb(134 93 204 / 30%);
+    cursor: pointer;
+    text-align: center;
+    margin-left:20px;
+    color: #fff;
     transition: all .25s ease;
-    position: relative;
-    left: 540px;
+    padding:0;
 }
 
-svg {
-  width: 1em;
-  overflow: visible;
-}
-
-/* .close__btn [data-v-48b363cf]:before {
-  transform: translate(-50%,-50%) rotate(45deg);
-  transition: all .25s ease-in-out .18s;
-  content: "";
-    position: absolute;
-    height: 2px;
-    width: 0;
-    top: 50%;
-    left: 50%;
-    background-color: #6030b1;
-    box-sizing:inherit;
-} */
-/* }.close-btn[data-v-48b363cf]:before */
-
-.close__btn[data-v-48b363cf]:after {
-  content: "";
-  position: absolute;
-  height: 2px;
-  width: 0;
-  top: 50%;
-  left: 50%;
-  background-color: #6030b1;
-  transform: translate(-50%,-50%) rotate(-45deg);
-    transition: all .25s ease-in-out .43s;
-    box-sizing: inherit;
-}
 /* Responsiveness */
-
+@media (max-width: 1280px) {
+  .bento-menu{
+    display: none;
+  }
+  }
 @media (max-width: 750px) {
 .links__ac{
   display: none;
+}
+.bento-menu{
+  display: block;
+  display: flex;
 }
 }
