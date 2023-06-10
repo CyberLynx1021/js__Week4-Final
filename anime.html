@@ -4,68 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anime Website</title>
-    <link rel="stylesheet" href="./anime.css">
-    <script src="anime.js" defer></script>
-    <script src="https://kit.fontawesome.com/ea6f5b7988.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div class="full__page">
-        <header class="nav__bar">
-            <div class="nav__content--wrapper">
-                <div class="logo">
-                    <img class="blinker__logo" src="./assets/animego-1 (1).jpg" alt="Logo">
-                </div>
-                <div class="links__ac"> 
-                    <a class="home__link" href="#">HOME</a>
-                    <a class="find__link" href="#">Find your Anime</a>
-                    <a class="contact__btn" href="#">Contact</a>
-                </div>
-                <!-- Bento menu and menu links -->
-            </div>
-            <div class="close__btn"></div>
-        </header>
-    </div>
-
-    <section class="Landing__page">
-        <div class="content__wrapper">
-            <div class="header__section">
-                <h1 class="header__one"><span class="Orange">Voted Best application to find your favorite anime.</span></h1>
-                <p class="sub__header"> Find anime that you've never seen for <br>
-                    <span class="Orange">ages ago.</span>
-                </p>
-            </div>
-            <div class="search__station">     
-                <form action="" method="submit" class="input__wrapper">
-                    <input class="input" type="text" placeholder="Start Your Journey Now"> 
-                    </input>
-                </form>
-                <figure class="not__loading">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </figure>
-            </div>
-        </div>
-    </section>
-
-    <!-- Movie data section -->
-    <section class="movie__section">
-        <div class="movie__container" id="movieContainer">
-            <!-- Movie cards will be dynamically added here -->
-        </div>
-    </section>
-</body>
-</html>
-
-
-
-
-<!-- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./anime.css">
     <script src="anime.js" defer></script>
@@ -81,7 +19,7 @@
                 </div>
                 <div class="links__ac"> 
                     <a class= "home__link"href="">HOME</a>
-                    <a class= "find__link" href="">Find your Anime</a>
+                    <a class= "find__link" href="">Find your Movie</a>
                     <a class= "contact__btn" href="">Contact</a>
                 </div>
                 <figure title="bento__menu--icon" data-v-48b363cf="" class="bento-menu" onclick="openMenu() ">
@@ -111,7 +49,7 @@
                                 </li>
                                 <li class="menu__list">
                                     <a class="menu__link" onclick="closeMenu()" href="#"
-                                >Find your Anime</a
+                                >Find your Favorite Movie</a
                                     >
                                 </li>
                                 <li class="menu__list">
@@ -128,22 +66,39 @@
         <section class ="Landing__page">
             <div class="content__wrapper">
                 <div class="header__section">
-                    <h1 class="header__one"><span class="Orange">Voted Best application to find your favorite anime.</span></h1>
-                    <p class="sub__header"> Find anime that you've never seen for <br>
+                    <h1 class="header__one"><span class="Orange">Voted Best application to find your favorite Movies.</span></h1>
+                    <p class="sub__header"> Find Movies that you've lost <br>
                         <span class="Orange">ages ago.</span>
                     </p>
                 </div>
-            <div class="search__station">     
+            <div class="search__station">  
+                <div class="input--wrapper">
+                    <input id="searchInput" class="input" type="text" placeholder="Enter search query">
+                    <button id="searchButton" class="not__loading">
+                        <i class="fa-solid fa-magnifying-glass searchButton"></i>
+                    </button>
+                  </div>
+                </div>
+                <div id="apiDataContainer" class="api-data-container"></div>
+                <img id="imageContainer" class="api-image" src="" alt="API Image">   
                 <form action="" method = "submit" class="input__wrapper">
-                    <input class="input" type="text" placeholder="Start Your Journey Now"> 
-                    </input>
                 </form>
-                        <figure class="not__loading">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </figure>
                     </div>
                 </div>
 
         </section>
+        <section class="search-results">
+            <div class="movie-container">
+              <!-- <div class="movie-item">
+                <img class="movie-image" src="movie1.jpg" alt="Movie 1">
+                <h3 class="movie-title">Movie 1</h3>
+              </div> -->
+              <!-- <div class="movie-item">
+                <img class="movie-image" src="movie2.jpg" alt="Movie 2">
+                <h3 class="movie-title">Movie 2</h3>
+              </div> -->
+              <!-- Add more movie items here -->
+            </div>
+          </section>
 </body>
-</html> -->
+</html>
