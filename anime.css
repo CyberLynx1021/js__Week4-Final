@@ -432,9 +432,12 @@ Landing PAGE
   }
 }
 
-body {
-  background: #000;
-  
+.dark-theme {
+  background-color: black;
+  color: white;
 }
 
- 
+.light-theme {
+  background-color: white;
+  color: black;
+}
