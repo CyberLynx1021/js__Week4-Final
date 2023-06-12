@@ -59,40 +59,6 @@ async function fetchAPI() {
     console.error(error);
   }
 }
-const movies = [
-  { title: "Movie 1", image: "movie1.jpg" },
-  { title: "Movie 2", image: "movie2.jpg" },
-  { title: "Movie 3", image: "movie3.jpg" },
-  // Add more movie objects as needed
-];
-
-const moviesContainer = document.getElementById("movies-container");
-
-// Create movie cards and add them to the container
-movies.forEach((movie) => {
-  const movieCard = createMovieCard(movie.title, movie.image);
-  moviesContainer.appendChild(movieCard);
-});
-
-// Function to create a movie card
-function createMovieCard(title, image) {
-  const movieCard = document.createElement("div");
-  movieCard.classList.add("movie-card");
-
-  const movieImage = document.createElement("img");
-  movieImage.src = image;
-  movieImage.alt = title;
-  movieCard.appendChild(movieImage);
-
-  const movieTitle = document.createElement("h3");
-  movieTitle.textContent = title;
-  movieCard.appendChild(movieTitle);
-
-  return movieCard;
-}
-
-
-
 
 
 function openMenu() {

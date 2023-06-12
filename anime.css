@@ -343,44 +343,61 @@ Landing PAGE
 }
 
 /* API IMAGE*/
+#apiDataContainer {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  margin-top: 40px;
+}
+
 .movie-container {
-  width: 25%;
+  width: 180px;
+  margin: 30px;
   padding: 10px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
-  list-style: none;
-  color: #0a1f44;
-} 
-
-
-.movie-title {
-  font-size: 18px;
-  color: #fff;
-  margin-bottom: 10px;
-}
-
-.movie-image {
-  width: 100%;
-  height: auto;
+  background-color: #f0cf92;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.movie-image {
+  width: 160px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 5px;
+}
 
-
-/* .api-data-container {
-  margin-top: 40px;
+.movie-title {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0a1f44;
   text-align: center;
 }
 
-.api-image {
-  margin-top: 40px;
-  width: 300px;
-  height: auto;
-  display: none;
-} */
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+  .movie-container {
+    width: 120px;
+    margin: 5px;
+    padding: 5px;
+  }
+
+  .movie-image {
+    width: 200px;
+    height: 150px;
+  }
+
+  .movie-title {
+    font-size: 12px;
+  }
+}
+
+
 
 /* Responsiveness */
 @media (max-width: 1280px) {
@@ -420,32 +437,4 @@ body {
   
 }
 
-/* .movies {
-  width:100%;
-  display: flex;
-  flex-wrap:wrap;
-}
-.movies li {
-  flex:1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  list-style: none;
-  margin:10px;
-  padding: 15px;
-  border-radius: 12px;
-  text-align: center;
-  background: #272727;
-}
-*/
- .movies li img {
-max-width:300px;
-border-radius: 12px;
-}
-
-.movies li h2 {
-  color:#fff;
-  font-size: 1.8em;
-  padding:15px 10px 0;
-  margin-top: auto;
-} 
+ 
